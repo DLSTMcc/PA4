@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promociones - Lima Noir Coffee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="shortcut icon" href="img.png/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+body{
+    background-color: black;
+    max-width: 80%;
+    font-family: 'Playfair Display', serif;
+    margin: 0 auto;
+    color: gold;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: gold;
+    font-size: 40px
+}
+
+.cabecera{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: black;
+    color: black;
+}
+
+#menu{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    list-style: none;
+    color: gold;
+    transition: 0.4s;
+    font-size: 20px;
+}
+
+#menu a{
+    text-decoration: none;
+    transition: 0.4s;
+    color: gold;
+}
+
+
+
+  #menu {
+    gap: 50px;
+    font-size: 20px;
+  }
+  /* Contenedor principal del cupón */
+.cupon-container{
+    position: relative;
+    background: linear-gradient(160deg, #111111 0%, #1a1a1a 100%);
+    border: 3px dashed #d4af37;
+    border-radius: 15px;
+
+    width: 550px;
+    max-width: 90%;
+
+    padding: 45px 50px;
+    text-align: center;
+
+    box-shadow: 0 0 30px rgba(212,175,55,.30);
+
+    animation: aparecer 0.8s ease-out, flotar 4s ease-in-out infinite;
+}
+
+
+.cupon-container::before,
+.cupon-container::after{
+    content: "";
+    position: absolute;
+
+    width: 40px;
+    height: 40px;
+
+    background: black;   /* mismo color del fondo */
+
+    border-radius: 50%;
+
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cupon-container::before{
+    left: -20px;
+}
+
+.cupon-container::after{
+    right: -20px;
+}
+
+/* Entrada del cupón */
+@keyframes aparecer{
+
+    0%{
+        opacity: 0;
+        transform: translateY(40px) scale(.9);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+@keyframes flotar{
+
+    0%,100%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-10px);
+    }
+
+}
+
+
+.cupon-container h1{
+    color: #d4af37;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+
+.oferta{
+    display: inline-block;
+    background: #d4af37;
+    color: #111;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Descripción */
+.cupon-container p{
+    color: #d8d8d8;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Botón */
+.btn-cupon{
+    display: inline-block;
+    background: transparent;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+
+    padding: 14px 30px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.btn-cupon:hover{
+
+    background: #d4af37;
+    color: #111;
+
+    transform: scale(1.05);
+
+    box-shadow: 0 0 20px rgba(212,175,55,.6);
+
+}
+
+
+.overlay{
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,.80);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.4s;
+
+    border-radius:15px;
+}
+
+/* Mostrar popup */
+#popup:checked ~ .overlay{
+    opacity:1;
+    visibility:visible;
+}
+
+/* Ventana */
+.popup{
+
+    position:relative;
+
+    width:340px;
+
+    background:linear-gradient(160deg,#111,#1b1b1b);
+
+    border:2px dashed #d4af37;
+
+    border-radius:12px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 0 25px rgba(212,175,55,.4);
+
+    animation:popup .5s ease;
+
+}
+
+/* Forma de cupón */
+.popup::before,
+.popup::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:28px;
+    height:28px;
+
+    background:black;
+
+    border-radius:50%;
+
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.popup::before{
+    left:-14px;
+}
+
+.popup::after{
+    right:-14px;
+}
+
+/* Animación */
+
+@keyframes popup{
+
+    0%{
+        opacity:0;
+        transform:scale(.5);
+    }
+
+    70%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+
+
+.check{
+
+    width:70px;
+    height:70px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    border:3px solid #d4af37;
+
+    color:#d4af37;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:36px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.codigo{
+
+    border:2px dashed #d4af37;
+
+    padding:10px;
+
+    margin:20px 0;
+
+    border-radius:8px;
+
+    color:#d4af37;
+
+    font-weight:bold;
+
+}
+
+
+
+.btn-entendido{
+
+    display:inline-block;
+
+    padding:10px 30px;
+
+    border-radius:8px;
+
+    background:#d4af37;
+
+    color:black;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.btn-entendido:hover{
+
+    background:#f0c94d;
+
+    transform:scale(1.05);
+
+}
+.main-content{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:80vh;
+
+}
+.redes{
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    gap: 50px;
+}
+
+.fa-brands{
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 25px;
+    transition: 0.4s;
+}
+
+.fa-brands:hover{
+    color: gold;
+    transform: scale(1.05);
+}
+
+#menu a:hover{
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <br>
+        
+        <h1>Lima Noir Coffee</h1>
+        <nav class="cabecera">
+            <ul id="menu">
+                  <li><a href="index.html">
+                   <i class="fa-regular fa-heart"></i>INICIO</a></li>
+                    <li><a href="nosotros.html">
+                        <i class="fa-solid fa-user"></i> NOSOTROS</a></li>
+
+                  <li><a href="blog.html">
+                    <i class="fa-solid fa-pencil"></i> BLOG</a></li>
+
+                  <li><a href="galeria.html">
+                    <i class="fa-solid fa-photo-film"></i> GALERIA</a></li>
+
+                  <li><a href="videos.html">
+                   <i class="fa-solid fa-video"></i> VIDEOS</a></li>
+                    <li><a href="promociones.html">
+                        <i class="fa-solid fa-tag"></i> PROMOCIONES</a></li>
+                        <li><a href="combos.html">
+                            <i class="fa-solid fa-box"></i> COMBOS</a></li>
+                   <li><a href="contactos.html">
+                        <i class="fa-solid fa-phone"></i> CONTACTOS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">
+
+    
+    
+<div class="cupon-container">
+
+    <input type="checkbox" id="popup" hidden>
+
+    <h1>Lima Noir Coffee</h1>
+
+    <div class="oferta">☕ 2x1 Capuchino</div>
+
+    <p>Disfruta del auténtico café peruano premium.</p>
+
+    <label for="popup" class="btn-cupon">
+        Reclamar Cupón
+    </label>
+
+    <!-- Popup oculto -->
+    <div class="overlay">
+
+        <div class="popup">
+
+            <div class="check">✓</div>
+
+            <h2>¡Cupón activo!</h2>
+
+            <p>Presenta este código en caja.</p>
+
+            <div class="codigo">
+                CAFE-PA4-ISIL
+            </div>
+
+            <label for="popup" class="btn-entendido">
+                Entendido
+            </label>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+
+<footer class="redes">
+        <a href="https://x.com/"target="_blank">
+        <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/"target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/"target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/"target="_blank">
+        <i class="fa-brands fa-tiktok"></i>
+        </a>
+    </footer>
+    <audio controls autoplay loop hidden> 
+        <source src="audios/audio_jazz.mp3">
+        </audio>  
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combos - Lima Noir Coffee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="shortcut icon" href="img.png/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="Bootstrap/Bootstrap/css/bootstrap.min.css">
+    <style>
+      body{
+    background-color: black;
+    max-width: 80%;
+    font-family: 'Playfair Display', serif;
+    margin: 0 auto;
+    color: gold;
+    
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: gold;
+    font-size: 40px
+}
+
+.cabecera{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: black;
+    color: black;
+}
+
+#menu{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    list-style: none;
+    color: gold;
+    transition: 0.4s;
+    font-size: 20px;
+}
+
+#menu a{
+    text-decoration: none;
+    transition: 0.4s;
+    color: gold;
+}
+
+.border-dorado {
+    border-color: #d4af37;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    max-height: 340px;
+    padding: 12px;
+}
+.content{
+    padding-top: 150px;
+
+}
+.card-dorado {
+  background-color: #1a1a1a;
+  border: 2px solid #d4af37;
+  width: 100%;
+  max-width: 24rem;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.card-dorado .card-img-top {
+  height: 320px;
+  object-fit: cover;
+}
+/* Responsive: pantallas chicas (celulares) */
+@media (max-width: 480px) {
+  .card-dorado {
+    max-width: 100%;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .card-dorado .card-img-top {
+    height: 200px;
+  }
+}
+
+/* Responsive: tablets */
+@media (max-width: 768px) {
+  .card-dorado {
+    max-width: 90%;
+    padding: 20px;
+  }
+}
+
+
+.card-dorado .card-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-dorado .card-title {
+  color: #d4af37;
+}
+
+.card-dorado .card-text {
+  color: #cfcfcf;
+}
+
+.card-dorado .btn-dorado {
+  background-color: transparent;
+  border: 2px solid #d4af37;
+  color: #d4af37;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-dorado .btn-dorado:hover {
+  background-color: #d4af37;
+  color: #0d0d0d;
+}
+.redes{
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    gap: 50px;
+}
+
+.fa-brands{
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 25px;
+    transition: 0.4s;
+}
+
+.fa-brands:hover{
+    color: gold;
+    transform: scale(1.05);
+}
+    </style>
+
+</head>
+<body>
+     <h1>Lima Noir Coffee</h1>
+    <header>
+        <nav class="cabecera">
+            <ul id="menu">
+                <li><a href="index.html"><i class="fa-regular fa-heart"></i> INICIO</a></li>
+                <li><a href="nosotros.html"><i class="fa-solid fa-user"></i> NOSOTROS</a></li>
+                <li><a href="blog.html"><i class="fa-solid fa-pencil"></i> BLOG</a></li>
+                <li><a href="galeria.html"><i class="fa-solid fa-photo-film"></i> GALERIA</a></li>
+                <li><a href="videos.html"><i class="fa-solid fa-video"></i> VIDEOS</a></li>
+                 <li><a href="promociones.html">
+                        <i class="fa-solid fa-tag"></i> PROMOCIONES</a></li>
+                        <li><a href="combos.html"><i class="fa-solid fa-box"></i> COMBOS</a></li>
+                <li><a href="contactos.html"><i class="fa-solid fa-phone"></i> CONTACTOS</a></li>
+            </ul>
+        </nav>
+    </header>
+   <div class="content">
+
+        <div class="container text-center border border-3 border-dorado p-5 mt-5">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-md-0">
+                    <img src="img.png/Sirviendo-cafe.png" alt="Sirviendo café" class="img-fluid">
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <img src="img.png/lima_noir_brindis_ilustracion.png" alt="tazas de café" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center py-5">
+            <div class="card card-dorado">
+                <img src="img.png/card.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Coffe Especial</h5>
+                    <p class="card-text">Descubre el auténtico sabor del café premium. Compra tu favorito y disfruta cada sorbo..</p>
+                    <a href="#" class="btn btn-dorado">Comprar ahora 
+                        s/20
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+ <footer class="redes">
+        <a href="https://x.com/"target="_blank">
+        <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/"target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/"target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/"target="_blank">
+        <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+       </footer>
+
+
+
+
+
+    <script src="Bootstrap/Bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
